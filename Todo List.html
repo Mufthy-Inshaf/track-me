@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		www.trackme.edu
+	</title>
+	<style>
+		body{
+			background-image: url("https://c4.wallpaperflare.com/wallpaper/116/883/732/students-studying-motivational-minimalism-wallpaper-preview.jpg");
+
+			text-align: center;
+			padding: 30px 10px 10px 10px;
+			background-repeat: no-repeat;
+      		background-attachment: fixed;
+      		background-size: cover;
+
+			
+		}
+
+        .input{
+            border-radius: 5px;
+            background-color: black;
+            padding: 4px;
+            color: white;
+            
+
+
+        }
+
+        .input:hover
+        {
+            background-color: white;
+            color: black;
+        }
+
+		h1 {
+			color: orange;
+		}
+
+        .button{
+
+            background-color: green;
+            color: white;
+            padding: 3px;
+            border-radius: 5px;
+            border: none;
+
+        }
+
+        .button:hover{
+            background-color: lime;
+            color: white;
+        }
+
+        .button2{
+
+            background-color: red;
+            color: white;
+            padding: 2.8px;
+            border-radius: 5px;
+            cursor: pointer;
+
+
+
+        }
+
+        .button2:hover
+        {
+            background-color: black;
+        }
+
+
+		
+	</style>
+</head>
+<body>
+
+	<h1> My To-Do List </h1>
+
+	<input id="task" class="input" placeholder="Enter Your Task">
+	<input id="time" class="input" placeholder="Enter Your Task Starting time" aria-label="Start Time">
+	<input id="time_e" class="input" placeholder="Enter Your Task Ending time" aria-label="End Time">
+	<input id="Reward" class="input" placeholder="Give Reward">
+
+	<button onclick="add()" class="button"> Add </button>
+
+	<ul id="list-container" style="color: #80ff00;background-color: black;opacity: 85%;text-align: left;border-radius: 10px;padding-top: 10px;padding-bottom: 10px;left: 30px;">
+		<!-- <li>  Hello 
+			<button> Delete  </button>
+		</li> -->
+	</ul>
+
+
+	<script>
+		var listitem = document.getElementById("list-container")
+		var gettask = document.getElementById("task")
+
+		var time = document.getElementById("time")
+		var time_e = document.getElementById("time_e")
+		var Reward = document.getElementById("Reward")
+
+		console.log(listitem)
+
+		function add()
+		{
+			var createh1 = document.createElement("li"+"h3")
+			createh1.innerHTML = gettask.value +"   =   "+time.value + "  -  " + time_e.value+ "   " + Reward.value+"   " +"<button onclick='del(event)' class='button2'> Delete </button>" + "<br>"
+			listitem.append(createh1)
+
+
+		}
+
+
+		function del(event)
+		{
+			event.target.parentElement.remove()
+		}
+	</script>
+
+</body>
+</html>
